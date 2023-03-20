@@ -4,46 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
-            header {
-                border: 1px dashed; gray;                
-            }
-
-            main {
-                border: 1px dashed gray;
-                width: 400px;
-                height: 600px;
-                margin: auto;
-            }
-            .board {
-                border: 1px solid red;
-                width: 300px;
-                height: 400px;
-                margin: auto;
-            }
-
-            p {
-                padding: 0;
-                margin: 0;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/style.css') }}">
     </head>
     <body>
-        <header>
-            <h1><mark>SIGN UP</mark> PAGE IN DEVELOPMENT</h1>
-        </header>
-        
-        <main>
-            <div class='board'>
-                <p>Некоторый текст</p>
+        <form action="/signup/handler" method="post" class="form">
+            <h1 class="form__title">Регистрация</h1>
+            <div class="form__group">
+                <input class="form__input" placeholder=" " autocomplete="on" autofocus="on">
+                <label class="form__label">Email</label>    
             </div>
-        </main>
-
-        <footer></footer>
-
+            <div class="form__group">
+                <input type="password" class="form__input" placeholder=" " autocomplete="on">
+                <label class="form__label">Пароль</label>    
+            </div>
+            <div class="form__group">
+                <input type="password" class="form__input" placeholder=" " autocomplete="on">
+                <label class="form__label">Повторный пароль</label>    
+            </div>
+            <button class="form__button">Зарегистрироваться</button>
+        </form>
     </body>
 </html>
