@@ -4,18 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
         <form action="/login/handler" method="post" class="form">
             <h1 class="form__title">Вход</h1>
             <div class="form__group">
-                <input type="text" name="email" class="form__input" placeholder=" " autocomplete="on" autofocus="on">
+                <input type="email" name="email" class="form__input" placeholder=" " autocomplete="on" autofocus="on" required>
                 <label class="form__label">E-mail</label>    
             </div>
             <div class="form__group">
-                <input type="password" name="password" class="form__input" placeholder=" " autocomplete="on">
+                <input type="password" name="password" class="form__input" placeholder=" " autocomplete="on" required>
                 <label class="form__label">Пароль</label>    
+            </div>
+            <div class="form__group_remember">
+                <input type="checkbox" name="remember" value="true">
+                <label>Запомнить меня</label>
+            </div>
+            <div class="error_text">
+                {{ get_flashed_messages()[0] }}
             </div>
             <button type="submit" class="form__button">Войти</button>
         </form>

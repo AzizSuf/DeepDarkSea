@@ -71,7 +71,6 @@ body {
 .form__button:focus,
 .form__button:hover {
     background-color: rgba(0, 113, 240, 0.7);
-
 }
 
 .form__input:focus ~ .form__label,
@@ -79,4 +78,22 @@ body {
     top: -18px;
     font-size: 12px;
     color: #e0e0e0;
+}
+
+.error_text {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.form__group_remember {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.form__group_remember input{
+    margin-right: 10px;
+    height: 18px;
+    width: 18px;
+    font-size: 16px;
 }
