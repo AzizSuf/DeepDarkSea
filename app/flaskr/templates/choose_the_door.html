@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep Dark Sea</title>
+	<style>
+		body {
+			background: radial-gradient(circle, #000000, #191966);
+			font-family: Arial, sans-serif;
+			color: #fff7f7;
+		}
+
+		h1 {
+			font-size: 48px;
+			font-weight: bold;
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		button {
+			background-color: #2e7cd5;
+			color: #fff;
+			border-radius: 50px;
+			border: none;
+			padding: 10px 80px;
+			font-size: 15px;
+			font-weight: bold;
+			margin-top: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Choose the door</h1>
+	<button onclick="location.href='http://127.0.0.1:5000/bot/van_darkholme'" type="button" style="position:absolute; top:25%; left:25%; width:50%; height:5%">Van Darkholme</button>
+	<button onclick="location.href='http://127.0.0.1:5000/bot/steve_rambo'" type="button" style="position:absolute; top:31%; left:25%; width:50%; height:5%">Steve Rambo</button>
+	<button onclick="location.href='http://127.0.0.1:5000/bot/billy_herrington'" type="button" style="position:absolute; top:37%; left:25%; width:50%; height:5%">Billy Herrington</button>
+	<button onclick="location.href='http://127.0.0.1:5000/bot/uncle_bogdan'" type="button" style="position:absolute; top:43%; left:25%; width:50%; height:5%">Uncle Bogdan</button>
+	<button onclick="location.href='http://127.0.0.1:5000/'" type="button" style="position:absolute; top:49%; left:25%; width:50%; height:5%">Back</button>
+    <img src="{{ url_for('static', filename='Kazuya_left.jpg') }}" style="position:absolute; top:0px; left:0px; width:20%; height:100%;">
+    <img src="{{ url_for('static', filename='Kazuya_right.jpg') }}" style="position:absolute; top:0px; right:0px; width:20%; height:100%;">
+</body>
+</html>

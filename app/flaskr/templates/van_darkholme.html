@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep Dark Sea</title>
+	<style>
+		body {
+			background: radial-gradient(circle, #000000, #191966);
+			font-family: Arial, sans-serif;
+			color: #fff7f7;
+		}
+
+		h1 {
+			font-size: 48px;
+			font-weight: bold;
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		button {
+			background-color: #2e7cd5;
+			color: #fff;
+			border-radius: 50px;
+			border: none;
+			padding: 10px 80px;
+			font-size: 15px;
+			font-weight: bold;
+			margin-top: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		table {
+		    background-color: blue;
+		    position: absolute;
+		    padding: 1%;
+		}
+
+		td {
+		    position: table;
+		    width: 8%;
+		}
+	</style>
+</head>
+<body>
+<div style="position: absolute; top: 20%; left: 20%;">
+    <table border="1" cellpadding="20">
+        <tr>
+            <td onclick="sendPostRequest(0, 0)"></td>
+            <td onclick="sendPostRequest(0, 1)"></td>
+            <td onclick="sendPostRequest(0, 2)"></td>
+            <td onclick="sendPostRequest(0, 3)"></td>
+            <td onclick="sendPostRequest(0, 4)"></td>
+            <td onclick="sendPostRequest(0, 5)"></td>
+            <td onclick="sendPostRequest(0, 6)"></td>
+            <td onclick="sendPostRequest(0, 7)"></td>
+            <td onclick="sendPostRequest(0, 8)"></td>
+            <td onclick="sendPostRequest(0, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(1, 0)"></td>
+            <td onclick="sendPostRequest(1, 1)"></td>
+            <td onclick="sendPostRequest(1, 2)"></td>
+            <td onclick="sendPostRequest(1, 3)"></td>
+            <td onclick="sendPostRequest(1, 4)"></td>
+            <td onclick="sendPostRequest(1, 5)"></td>
+            <td onclick="sendPostRequest(1, 6)"></td>
+            <td onclick="sendPostRequest(1, 7)"></td>
+            <td onclick="sendPostRequest(1, 8)"></td>
+            <td onclick="sendPostRequest(1, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(2, 0)"></td>
+            <td onclick="sendPostRequest(2, 1)"></td>
+            <td onclick="sendPostRequest(2, 2)"></td>
+            <td onclick="sendPostRequest(2, 3)"></td>
+            <td onclick="sendPostRequest(2, 4)"></td>
+            <td onclick="sendPostRequest(2, 5)"></td>
+            <td onclick="sendPostRequest(2, 6)"></td>
+            <td onclick="sendPostRequest(2, 7)"></td>
+            <td onclick="sendPostRequest(2, 8)"></td>
+            <td onclick="sendPostRequest(2, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(3, 0)"></td>
+            <td onclick="sendPostRequest(3, 1)"></td>
+            <td onclick="sendPostRequest(3, 2)"></td>
+            <td onclick="sendPostRequest(3, 3)"></td>
+            <td onclick="sendPostRequest(3, 4)"></td>
+            <td onclick="sendPostRequest(3, 5)"></td>
+            <td onclick="sendPostRequest(3, 6)"></td>
+            <td onclick="sendPostRequest(3, 7)"></td>
+            <td onclick="sendPostRequest(3, 8)"></td>
+            <td onclick="sendPostRequest(3, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(4, 0)"></td>
+            <td onclick="sendPostRequest(4, 1)"></td>
+            <td onclick="sendPostRequest(4, 2)"></td>
+            <td onclick="sendPostRequest(4, 3)"></td>
+            <td onclick="sendPostRequest(4, 4)"></td>
+            <td onclick="sendPostRequest(4, 5)"></td>
+            <td onclick="sendPostRequest(4, 6)"></td>
+            <td onclick="sendPostRequest(4, 7)"></td>
+            <td onclick="sendPostRequest(4, 8)"></td>
+            <td onclick="sendPostRequest(4, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(5, 0)"></td>
+            <td onclick="sendPostRequest(5, 1)"></td>
+            <td onclick="sendPostRequest(5, 2)"></td>
+            <td onclick="sendPostRequest(5, 3)"></td>
+            <td onclick="sendPostRequest(5, 4)"></td>
+            <td onclick="sendPostRequest(5, 5)"></td>
+            <td onclick="sendPostRequest(5, 6)"></td>
+            <td onclick="sendPostRequest(5, 7)"></td>
+            <td onclick="sendPostRequest(5, 8)"></td>
+            <td onclick="sendPostRequest(5, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(6, 0)"></td>
+            <td onclick="sendPostRequest(6, 1)"></td>
+            <td onclick="sendPostRequest(6, 2)"></td>
+            <td onclick="sendPostRequest(6, 3)"></td>
+            <td onclick="sendPostRequest(6, 4)"></td>
+            <td onclick="sendPostRequest(6, 5)"></td>
+            <td onclick="sendPostRequest(6, 6)"></td>
+            <td onclick="sendPostRequest(6, 7)"></td>
+            <td onclick="sendPostRequest(6, 8)"></td>
+            <td onclick="sendPostRequest(6, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(7, 0)"></td>
+            <td onclick="sendPostRequest(7, 1)"></td>
+            <td onclick="sendPostRequest(7, 2)"></td>
+            <td onclick="sendPostRequest(7, 3)"></td>
+            <td onclick="sendPostRequest(7, 4)"></td>
+            <td onclick="sendPostRequest(7, 5)"></td>
+            <td onclick="sendPostRequest(7, 6)"></td>
+            <td onclick="sendPostRequest(7, 7)"></td>
+            <td onclick="sendPostRequest(7, 8)"></td>
+            <td onclick="sendPostRequest(7, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(8, 0)"></td>
+            <td onclick="sendPostRequest(8, 1)"></td>
+            <td onclick="sendPostRequest(8, 2)"></td>
+            <td onclick="sendPostRequest(8, 3)"></td>
+            <td onclick="sendPostRequest(8, 4)"></td>
+            <td onclick="sendPostRequest(8, 5)"></td>
+            <td onclick="sendPostRequest(8, 6)"></td>
+            <td onclick="sendPostRequest(8, 7)"></td>
+            <td onclick="sendPostRequest(8, 8)"></td>
+            <td onclick="sendPostRequest(8, 9)"></td>
+        </tr>
+        <tr>
+            <td onclick="sendPostRequest(9, 0)"></td>
+            <td onclick="sendPostRequest(9, 1)"></td>
+            <td onclick="sendPostRequest(9, 2)"></td>
+            <td onclick="sendPostRequest(9, 3)"></td>
+            <td onclick="sendPostRequest(9, 4)"></td>
+            <td onclick="sendPostRequest(9, 5)"></td>
+            <td onclick="sendPostRequest(9, 6)"></td>
+            <td onclick="sendPostRequest(9, 7)"></td>
+            <td onclick="sendPostRequest(9, 8)"></td>
+            <td onclick="sendPostRequest(9, 9)"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+
+<script>
+function sendPostRequest(row, col) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/my-endpoint', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send('row=' + row + '&col=' + col);
+}
+</script>
