@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   app:
-    image: azizsuf/deep-dark-sea:latest
+    image: azizsuf/deep-dark-sea
     container_name: deep_dark_sea
     command: python -m flask --app /app/flaskr/main run --host=0.0.0.0
     ports:
