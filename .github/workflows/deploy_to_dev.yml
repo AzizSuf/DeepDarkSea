@@ -45,7 +45,7 @@ jobs:
           key: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
           port: ${{ secrets.DEV_SERVER_SSH_PORT }}
           script: |
-            cd root/app
+            cd /root/app
             pwd
             docker compose -f docker-compose.dev.yml pull
             docker compose -f docker-compose.dev.yml up -d
