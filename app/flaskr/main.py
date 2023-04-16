@@ -56,7 +56,7 @@ def gay_website():
 @app.route("/my-endpoint", methods=["POST"])
 def handle_post_request():
     print(request.form)
-    return ""
+    return "OK"
 
 
 if __name__ == '__main__':
