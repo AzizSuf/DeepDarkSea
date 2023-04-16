@@ -35,14 +35,14 @@ jobs:
           context: .
           file: ./docker/Dockerfile.dev
           push: true
-          tags: azizsuf/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
+          tags: ${{ vars.DOCHUB_USERNAME }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
       
       - name: Install ssh keys
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H deep-dark-sea.ru > ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ vars.DEV_SERVER_HOSTNAME }} > ~/.ssh/known_hosts
 
       - name: Run docker image on the server
         run: |
-          ssh ${{ env.DEV_SERVER_USER }}@${{ env.DEV_SERVER_HOSTNAME }}:/app "docker compose pull && docker compose up -d"
+          ssh ${{ vars.DEV_SERVER_USER }}@${{ vars.DEV_SERVER_HOSTNAME }}:/app "docker compose pull && docker compose up -d"
