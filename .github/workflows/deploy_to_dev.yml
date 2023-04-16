@@ -35,7 +35,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile.dev
           push: true
-          tags: ${{ deep-dark-sea }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
+          tags: deep-dark-sea/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
       
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v0.1.10
