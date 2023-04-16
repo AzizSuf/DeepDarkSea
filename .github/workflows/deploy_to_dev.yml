@@ -35,14 +35,17 @@ jobs:
           context: .
           file: ./docker/Dockerfile.dev
           push: true
-          tags: ${{ vars.DOCHUB_USERNAME }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
+          tags: ${{ deep-dark-sea }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
       
-      - name: Install ssh keys
-        run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ vars.DEV_SERVER_HOSTNAME }} > ~/.ssh/known_hosts
+      - name: Executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.DEV_SERVER_HOSTNAME }}
+          username: ${{ secrets.DEV_SERVER_USER }}
+          key: ${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DEV_SERVER_SSH_PORT }}
+          script: |
+            cd /app/docker
+            docker compose -f docker-compose.dev.yml pull
+            docker compose -f docker-compose.dev.yml up -d
 
-      - name: Run docker image on the server
-        run: |
-          ssh ${{ vars.DEV_SERVER_USER }}@${{ vars.DEV_SERVER_HOSTNAME }}:/app "docker compose pull && docker compose up -d"
