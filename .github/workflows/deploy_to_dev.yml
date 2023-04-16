@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Clone a git repository
         uses: actions/checkout@v3
-        with:
-          ref: dev
+#        with:
+#          ref: dev
       
       - name: Cut commit sha
         id: cut
