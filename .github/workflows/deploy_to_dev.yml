@@ -35,7 +35,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile.dev
           push: true
-          tags: ${{ vars.DOCHUB_USERNAME }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
+          tags: ${{ env.DOCHUB_USERNAME }}/deep-dark-sea:${{ steps.cut.outputs.sha_short }}
       
       - name: Install ssh keys
         run: |
