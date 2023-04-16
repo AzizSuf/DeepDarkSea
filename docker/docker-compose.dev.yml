@@ -2,9 +2,7 @@ version: '3.5'
 
 services:
   app:
-    build:
-      context: ../
-      dockerfile: ./docker/Dockerfile.dev
+    image: azizsuf/DeepDarkSea:latest
     container_name: deep_dark_sea
     command: python -m flask --app /app/flaskr/main run --host=0.0.0.0
     ports:
