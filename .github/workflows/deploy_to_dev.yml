@@ -1,4 +1,4 @@
-name: Deploying to development server
+name: Deploying
 on:
   workflow_dispatch:
 
