@@ -9,7 +9,7 @@ import auth
 
 
 @app.route('/')
-def index():
+def index()
     return render_template('index.html')
 
 
