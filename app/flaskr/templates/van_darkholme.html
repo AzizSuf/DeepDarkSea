@@ -48,12 +48,12 @@
 	</style>
 </head>
     <body>
-        <img src="{{ url_for('static', filename='Van_ava.jpg') }}" onclick="playSoundFuckYou()" style="position:absolute; top:20vh; right:10vw; width:5vw; height:5vw;">
+        <img src="{{ url_for('static', filename='Van_ava.jpg') }}" onclick="playSoundFuckYou()" style="position:absolute; top:20vh; right:9vw; width:5vw; height:5vw;">
         <img src="{{ url_for('static', filename='Default.jpg') }}" style="position:absolute; top:20vh; left:8.5vw; width:5vw; height:5vw;">
-        <h1 style="position: absolute; top: 32vh; right: 11.7vw;">Van</h1>
+        <h1 style="position: absolute; top: 32vh; right: 10.7vw;">Van</h1>
         <h1 style="position: absolute; top: 32vh; left: 10.7vw;">You</h1>
         <div style="position: absolute; top: 20%; left: 15%;">
-            <table border="1" cellpadding="20">
+            <table border="1" cellpadding="20" id="table1">
                 <tr>
                     <td id="cell-0-0" onclick="sendPostRequest(0, 0, 1);"></td>
                     <td id="cell-0-1" onclick="sendPostRequest(0, 1, 1);"></td>
@@ -176,7 +176,7 @@
                 </tr>
             </table>
         </div>
-        <div style="position: absolute; top: 20%; right: 45%;">
+        <div style="position: absolute; top: 20%; right: 43%;">
             <table border="1" cellpadding="20" id="table2">
                 <tr>
                     <td id="cell-0-0van" onclick="sendPostRequest(0, 0); shoot(this)"></td>
@@ -369,13 +369,15 @@
     function shoot(c){
         let i = c.parentNode.rowIndex;
         let j = c.cellIndex;
-        if (arr_van[i][j] === 1 && c.style.backgroundColor != "red"){
+        if (arr_van[i][j] === 1){
             document.getElementById("aaah").play();
             c.style.backgroundColor = "#ff0000";
+            arr_van[i][j] = 3;
         }
         else if (arr_van[i][j] === 0){
             document.getElementById("vsplesk").play();
             c.style.backgroundColor = "#00ffff";
+            arr_van[i][j] = 2;
         }
     }
 </script>

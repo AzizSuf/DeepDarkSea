@@ -29,7 +29,7 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		
+
 		img {
             border: 2px solid #0000ff;
         }
@@ -37,7 +37,7 @@
 </head>
 <body>
 	<h1>Choose the door</h1>
-	<button onclick="location.href='{{ url_for('play_van') }}'" type="button" style="position:absolute; top:25%; left:25%; width:50%; height:5%">Van Darkholme</button>
+	<button onclick="artist()" type="button" style="position:absolute; top:25%; left:25%; width:50%; height:5%">Van Darkholme</button>
 	<button onclick="location.href='{{ url_for('play_steve') }}'" type="button" style="position:absolute; top:31%; left:25%; width:50%; height:5%">Steve Rambo</button>
 	<button onclick="location.href='{{ url_for('play_billy') }}'" type="button" style="position:absolute; top:37%; left:25%; width:50%; height:5%">Billy Herrington</button>
 	<button onclick="location.href='{{ url_for('play_uncle') }}'" type="button" style="position:absolute; top:43%; left:25%; width:50%; height:5%">Uncle Bogdan</button>
@@ -46,3 +46,18 @@
     <img src="{{ url_for('static', filename='Kazuya_right.jpg') }}" style="position:absolute; top:0px; right:0px; width:20%; height:100%;">
 </body>
 </html>
+
+
+
+<audio id="I am an artist">
+    <source src="{{ url_for('static', filename='iam-an-artist.mp3') }}" type="audio/mpeg"></source>
+</audio>
+
+
+
+<script>
+	function artist(){
+		document.getElementById("I am an artist").play();
+		setTimeout(function() {window.location.href = '{{ url_for('play_van') }}';}, 3000);
+	}
+</script>
