@@ -41,7 +41,7 @@ jobs:
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.DEV_SERVER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ env.DEV_SERVER_HOSTNAME }} > ~/.ssh/known_hosts
+          ssh-keyscan -H deep-dark-sea.ru > ~/.ssh/known_hosts
 
       - name: Run docker image on the server
         run: |
