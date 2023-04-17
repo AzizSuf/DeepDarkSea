@@ -360,13 +360,13 @@
         }
     };
     xhr.send('row=' + row + '&col=' + col + '&tab=' + tab);
-    console.log(arr);
     }
 </script>
 
 
 
 <script>
+    var hits = [];
     var stts = true;
     var boards = [[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 1, 0, 0, 1, 0, 1], [0, 1, 0, 0, 1, 0, 0, 0, 0, 0]],
                   [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 1, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0, 1, 0, 0, 0]],
@@ -399,7 +399,7 @@
         }
         else if (arr_van[i][j] === 0 && stts === true){
             stts = false;
-            disableTable();
+            disableTable(hits);
             document.getElementById("vsplesk").play();
             c.style.backgroundColor = "#4283ff";
             arr_van[i][j] = 2;
@@ -411,12 +411,30 @@
 
 <script>
     function disableTable() {
-        let i;
-        let j;
-        do{
-            i = Math.floor(Math.random() * 10);
-            j = Math.floor(Math.random() * 10);
-        } while(arr[i][j] === 2 || arr[i][j] === 3);
+        var i = null;
+        var j = null;
+        let len = hits.length;
+        if (len > 0){
+            var is = hits[0][0];
+            var js = hits[0][1];
+            var points = [];
+            try{arr[is - 1][js]; points.push([is - 1, js]);} catch {}
+            try{arr[is + 1][js]; points.push([is + 1, js]);} catch {}
+            try{arr[is][js - 1]; points.push([is, js - 1]);} catch {}
+            try{arr[is][js + 1]; points.push([is, js + 1]);} catch {}
+            for (let el = 0; el < points.length; el++){
+                if (arr[points[el][0]][points[el][1]] < 2) {i = points[el][0]; j = points[el][1]; break;}
+            }
+            console.log(points);
+            points = [];
+        }
+        if (i === null || j === null){
+            do{
+                i = Math.floor(Math.random() * 10);
+                j = Math.floor(Math.random() * 10);
+            } while(arr[i][j] === 2 || arr[i][j] === 3);
+        }
+        console.log(hits);
         if (arr[i][j] === 0) {
             randomVanSound();
             setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#4283ff";
@@ -429,6 +447,7 @@
             setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#ff0000";
             document.getElementById("vzryv").play();
             arr[i][j] = 3;
+            hits.unshift([i, j]);
             setTimeout(function(){disableTable();}, 1500)}, 2000);
         }
     }
