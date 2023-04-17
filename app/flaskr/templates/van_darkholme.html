@@ -317,6 +317,21 @@
 <audio id="vsplesk">
     <source src="{{ url_for('static', filename='vsplesk.mp3') }}" type="audio/mpeg"></source>
 </audio>
+<audio id="dungeon master">
+    <source src="{{ url_for('static', filename='dungeon-master.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="fisting">
+    <source src="{{ url_for('static', filename='fisting-is-300-.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="do anal">
+    <source src="{{ url_for('static', filename='i-dont-do-anal.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="swallow">
+    <source src="{{ url_for('static', filename='swallow-my-cu.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="fantasies">
+    <source src="{{ url_for('static', filename='deep-dark-fantasies.mp3') }}" type="audio/mpeg"></source>
+</audio>
 
 
 
@@ -354,12 +369,12 @@
     var arr = boards[Math.floor(Math.random() * boards.length)];
     var arr_van = boards_van[Math.floor(Math.random() * boards_van.length)];
     for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; j < arr[i].length; j++) {
-        if (arr[i][j] == 1) {
-            var cell = document.getElementById("cell-" + i + "-" + j);
-            cell.style.backgroundColor = "#ffffff";
+        for (var j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] == 1) {
+                var cell = document.getElementById("cell-" + i + "-" + j);
+                cell.style.backgroundColor = "#ffffff";
+            }
         }
-    }
     }
 </script>
 
@@ -376,8 +391,24 @@
         }
         else if (arr_van[i][j] === 0){
             document.getElementById("vsplesk").play();
-            c.style.backgroundColor = "#00ffff";
+            c.style.backgroundColor = "#4283ff";
             arr_van[i][j] = 2;
+            let rn = Math.floor(Math.random() * 5);
+            if (rn === 0){
+                setTimeout(function() {document.getElementById("fisting").play()}, 1000);
+            }
+            if (rn === 1){
+                setTimeout(function() {document.getElementById("dungeon master").play()}, 1000);
+            }
+            if (rn === 2){
+                setTimeout(function() {document.getElementById("do anal").play()}, 1000);
+            }
+            if (rn === 3){
+                setTimeout(function() {document.getElementById("swallow").play()}, 1000);
+            }
+            if (rn === 4){
+                setTimeout(function() {document.getElementById("fantasies").play()}, 1000);
+            }
         }
     }
 </script>
