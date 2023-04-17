@@ -424,15 +424,21 @@
 
 <script>
     function disableTable() {
-        let i = Math.floor(Math.random() * 10);
-        let j = Math.floor(Math.random() * 10);
+        let i;
+        let j;
+        do{
+            i = Math.floor(Math.random() * 10);
+            j = Math.floor(Math.random() * 10);
+        } while(arr[i][j] === 2 || arr[i][j] === 3);
         if (arr[i][j] === 0) {
             setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#4283ff";
-            document.getElementById("vsplesk-van").play();}, 2000);
+            document.getElementById("vsplesk-van").play();
+            arr[i][j] = 2;}, 2000);
         }
         if (arr[i][j] === 1) {
             setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#ff0000";
-            document.getElementById("vzryv").play();}, 2000);
+            document.getElementById("vzryv").play();
+            arr[i][j] = 3}, 2000);
         }
     }
 </script>
