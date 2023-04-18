@@ -16,6 +16,13 @@
 			text-align: center;
 		}
 
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20%;
+            text-align: center;
+        }
+
 		button {
 			background-color: #2e7cd5;
 			color: #fff;
@@ -413,12 +420,18 @@
                 }
                 if (count === build_van[u].length) {
                     labelDied2(build_van[u]);
-                    console.log(124124313);
                 }
             }
 
             document.getElementById("vzryv").play();
             setTimeout(function() {document.getElementById("aaah").play();}, 500)
+            if (aboutResult() === "player"){
+                let newh2 = document.createElement("h2");
+                let newContent = document.createTextNode("You won!");
+                newh2.appendChild(newContent);
+                document.body.appendChild(newh2);
+                stts = false;
+            }
         }
         else if (arr_van[i][j] === 0 && stts === true){
             stts = false;
@@ -490,7 +503,14 @@
                     labelDied1(build[u]);
                 }
             };
-            setTimeout(function(){disableTable();}, 1500)}, 2000);
+            if (aboutResult() === "van"){
+                let newh2 = document.createElement("h2");
+                let newContent = document.createTextNode("You lost!");
+                newh2.appendChild(newContent);
+                document.body.appendChild(newh2);
+                stts = false;
+            }
+            else{setTimeout(function(){disableTable();}, 1500)}}, 2000);
         }
     }
 </script>
@@ -551,5 +571,22 @@
 
 
 <script>
-    function aboutResult(){}
+    function aboutResult(){
+        let count_of_3 = 0;
+        for (let xxx = 0; xxx < 10; xxx++){
+            for (let yyy = 0; yyy < 10; yyy++){
+                if (arr[xxx][yyy] === 3){count_of_3 += 1;}
+            }
+        }
+        let count_of_3_van = 0;
+        for (let xxx = 0; xxx < 10; xxx++){
+            for (let yyy = 0; yyy < 10; yyy++){
+                if (arr_van[xxx][yyy] === 3){count_of_3_van += 1;}
+            }
+        }
+        console.log(count_of_3, count_of_3_van);
+        if (count_of_3 === 20){return "van";}
+        else if (count_of_3_van === 20){return "player";}
+        else {return null;}
+    }
 </script>
