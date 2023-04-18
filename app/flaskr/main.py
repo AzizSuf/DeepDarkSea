@@ -48,11 +48,6 @@ def play_human():
     return "<h1>Тут будет игра против игрока.</h1>"
 
 
-@app.route("/gay_website")
-def gay_website():
-    return "<h1>Тут будет gay-website.</h1>"
-
-
 @app.route("/my-endpoint", methods=["POST"])
 def handle_post_request():
     print(request.form)
