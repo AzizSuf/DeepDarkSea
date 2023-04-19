@@ -57,6 +57,5 @@ jobs:
           port: ${{ secrets.DEV_SERVER_SSH_PORT }}
           script: |
             cd ${{ env.APP_WORKDIR }}
-            docker compose -f docker-compose.dev.yml down
             docker compose -f docker-compose.dev.yml pull
             docker compose -f docker-compose.dev.yml up -d
