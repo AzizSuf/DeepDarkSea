@@ -327,23 +327,38 @@
 <audio id="vsplesk-van">
     <source src="{{ url_for('static', filename='vsplesk.mp3') }}" type="audio/mpeg"></source>
 </audio>
-<audio id="dungeon master">
+<audio id="rvs-0">
     <source src="{{ url_for('static', filename='dungeon-master.mp3') }}" type="audio/mpeg"></source>
 </audio>
-<audio id="fisting">
+<audio id="rvs-1">
     <source src="{{ url_for('static', filename='fisting-is-300-.mp3') }}" type="audio/mpeg"></source>
 </audio>
-<audio id="do anal">
+<audio id="rvs-2">
     <source src="{{ url_for('static', filename='i-dont-do-anal.mp3') }}" type="audio/mpeg"></source>
 </audio>
-<audio id="swallow">
+<audio id="rvs-3">
     <source src="{{ url_for('static', filename='swallow-my-cu.mp3') }}" type="audio/mpeg"></source>
 </audio>
-<audio id="fantasies">
+<audio id="rvs-4">
     <source src="{{ url_for('static', filename='deep-dark-fantasies.mp3') }}" type="audio/mpeg"></source>
 </audio>
 <audio id="vzryv">
     <source src="{{ url_for('static', filename='vzryv.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-5">
+    <source src="{{ url_for('static', filename='dont-touch.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-6">
+    <source src="{{ url_for('static', filename='that-turns-me-on.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-7">
+    <source src="{{ url_for('static', filename='its-so-fucking-deep.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-8">
+    <source src="{{ url_for('static', filename='do-you-like-what-you-see.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-9">
+    <source src="{{ url_for('static', filename='iam-cumming.mp3') }}" type="audio/mpeg"></source>
 </audio>
 
 
@@ -519,22 +534,8 @@
 
 <script>
     function randomVanSound(){
-        let rn = Math.floor(Math.random() * 5);
-            if (rn === 0){
-                setTimeout(function() {document.getElementById("fisting").play()}, 1000);
-            }
-            if (rn === 1){
-                setTimeout(function() {document.getElementById("dungeon master").play()}, 1000);
-            }
-            if (rn === 2){
-                setTimeout(function() {document.getElementById("do anal").play()}, 1000);
-            }
-            if (rn === 3){
-                setTimeout(function() {document.getElementById("swallow").play()}, 1000);
-            }
-            if (rn === 4){
-                setTimeout(function() {document.getElementById("fantasies").play()}, 1000);
-            }
+        let rn = Math.floor(Math.random() * 10);
+        document.getElementById("rvs-" + rn).play();
     }
 </script>
 
