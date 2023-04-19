@@ -41,10 +41,15 @@ jobs:
           file: ./docker/Dockerfile.dev
           push: true
           tags: ${{ secrets.DOCHUB_USERNAME }}/${{ env.DOCHUB_APP_REPO }}:latest #${{ steps.cut.outputs.sha_short }}
+      
+      - name: Sleep for 20 seconds
+        run: sleep 20s
+        shell: bash
 
   cd_part:
     name: Update the docker-image on the server
     runs-on: ubuntu-22.04
+    needs: [ci_part]
 
     steps:
       - name: Executing remote ssh commands using ssh key
