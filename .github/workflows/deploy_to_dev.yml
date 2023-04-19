@@ -41,7 +41,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile.dev
           push: true
-          tags: ${{ secrets.DOCHUB_USERNAME }}/${{ DOCHUB_APP_REPO }}:latest #${{ steps.cut.outputs.sha_short }}
+          tags: ${{ secrets.DOCHUB_USERNAME }}/${{ env.DOCHUB_APP_REPO }}:latest #${{ steps.cut.outputs.sha_short }}
 
   cd_part:
     name: Update the docker-image on the server
