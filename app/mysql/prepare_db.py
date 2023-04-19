@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 
 def main(config):
     con = mysql.connector.Connect(**config)
@@ -17,13 +18,12 @@ def main(config):
 
 if __name__ == '__main__':
 
-    # Configure MySQL login and database to use in config.py
     config = {
-        "host": "localhost",
+        "host": os.getenv('MYSQL_HOST'),
+        "database": os.getenv('MYSQL_DATABASE'),
+        "user": os.getenv('MYSQL_USER'),
+        "password": os.getenv('MYSQL_PASSWORD'),
         "port": 3306,
-        "database": "",
-        "user": "root",
-        "password": "1234",
         "charset": "utf8",
         "use_unicode": True,
         "get_warnings": True,
