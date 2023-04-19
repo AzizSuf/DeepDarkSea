@@ -1,13 +1,14 @@
 from mysql.connector import connect, Error
+import os
 
 # TODO: add hashing passwords!
 
 config = {
-    "host": "localhost",
+    "host": os.getenv('MYSQL_HOST'),
+    "database": os.getenv('MYSQL_DATABASE'),
+    "user": os.getenv('MYSQL_USER'),
+    "password": os.getenv('MYSQL_PASSWORD'),
     "port": 3306,
-    "database": "",
-    "user": "root",
-    "password": "1234",
     "charset": "utf8",
     "use_unicode": True,
     "get_warnings": True,
