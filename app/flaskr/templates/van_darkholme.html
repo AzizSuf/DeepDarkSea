@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep Dark Sea</title>
+	<style>
+		body {
+			background: radial-gradient(circle, #000000, #191966);
+			font-family: Arial, sans-serif;
+			color: #fff7f7;
+		}
+
+		h1 {
+			font-size: 12px;
+			font-weight: bold;
+			margin-top: 0px;
+			text-align: center;
+		}
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20%;
+            text-align: center;
+        }
+
+		button {
+			background-color: #2e7cd5;
+			color: #fff;
+			border-radius: 50px;
+			border: none;
+			padding: 10px 80px;
+			font-size: 15px;
+			font-weight: bold;
+			margin-top: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		table {
+		    background-color: blue;
+            border-spacing: 0;
+		    position: absolute;
+		}
+
+		td {
+		    position: static;
+		    width: 0.05vw;
+            height: 0.05vw;
+		}
+
+        img {
+            border: 2px solid #0000ff;
+        }
+	</style>
+</head>
+    <body>
+        <img src="{{ url_for('static', filename='Van_ava.jpg') }}" onclick="playSoundFuckYou()" style="position:absolute; top:20vh; right:9vw; width:5vw; height:5vw;">
+        <img src="{{ url_for('static', filename='Default.jpg') }}" style="position:absolute; top:20vh; left:8.5vw; width:5vw; height:5vw;">
+        <h1 style="position: absolute; top: 32vh; right: 10.7vw;">Van</h1>
+        <h1 style="position: absolute; top: 32vh; left: 10.7vw;">You</h1>
+        <div style="position: absolute; top: 20%; left: 15%;">
+            <table border="1" cellpadding="20" id="table1">
+                <tr>
+                    <td id="cell-0-0" onclick="sendPostRequest(0, 0, 1);"></td>
+                    <td id="cell-0-1" onclick="sendPostRequest(0, 1, 1);"></td>
+                    <td id="cell-0-2" onclick="sendPostRequest(0, 2, 1);"></td>
+                    <td id="cell-0-3" onclick="sendPostRequest(0, 3, 1);"></td>
+                    <td id="cell-0-4" onclick="sendPostRequest(0, 4, 1);"></td>
+                    <td id="cell-0-5" onclick="sendPostRequest(0, 5, 1);"></td>
+                    <td id="cell-0-6" onclick="sendPostRequest(0, 6, 1);"></td>
+                    <td id="cell-0-7" onclick="sendPostRequest(0, 7, 1);"></td>
+                    <td id="cell-0-8" onclick="sendPostRequest(0, 8, 1);"></td>
+                    <td id="cell-0-9" onclick="sendPostRequest(0, 9, 1);"></td>
+                </tr>
+                <tr>
+                    <td id="cell-1-0" onclick="sendPostRequest(1, 0, 1)"></td>
+                    <td id="cell-1-1" onclick="sendPostRequest(1, 1, 1)"></td>
+                    <td id="cell-1-2" onclick="sendPostRequest(1, 2, 1)"></td>
+                    <td id="cell-1-3" onclick="sendPostRequest(1, 3, 1)"></td>
+                    <td id="cell-1-4" onclick="sendPostRequest(1, 4, 1)"></td>
+                    <td id="cell-1-5" onclick="sendPostRequest(1, 5, 1)"></td>
+                    <td id="cell-1-6" onclick="sendPostRequest(1, 6, 1)"></td>
+                    <td id="cell-1-7" onclick="sendPostRequest(1, 7, 1)"></td>
+                    <td id="cell-1-8" onclick="sendPostRequest(1, 8, 1)"></td>
+                    <td id="cell-1-9" onclick="sendPostRequest(1, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-2-0" onclick="sendPostRequest(2, 0, 1)"></td>
+                    <td id="cell-2-1" onclick="sendPostRequest(2, 1, 1)"></td>
+                    <td id="cell-2-2" onclick="sendPostRequest(2, 2, 1)"></td>
+                    <td id="cell-2-3" onclick="sendPostRequest(2, 3, 1)"></td>
+                    <td id="cell-2-4" onclick="sendPostRequest(2, 4, 1)"></td>
+                    <td id="cell-2-5" onclick="sendPostRequest(2, 5, 1)"></td>
+                    <td id="cell-2-6" onclick="sendPostRequest(2, 6, 1)"></td>
+                    <td id="cell-2-7" onclick="sendPostRequest(2, 7, 1)"></td>
+                    <td id="cell-2-8" onclick="sendPostRequest(2, 8, 1)"></td>
+                    <td id="cell-2-9" onclick="sendPostRequest(2, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-3-0" onclick="sendPostRequest(3, 0, 1)"></td>
+                    <td id="cell-3-1" onclick="sendPostRequest(3, 1, 1)"></td>
+                    <td id="cell-3-2" onclick="sendPostRequest(3, 2, 1)"></td>
+                    <td id="cell-3-3" onclick="sendPostRequest(3, 3, 1)"></td>
+                    <td id="cell-3-4" onclick="sendPostRequest(3, 4, 1)"></td>
+                    <td id="cell-3-5" onclick="sendPostRequest(3, 5, 1)"></td>
+                    <td id="cell-3-6" onclick="sendPostRequest(3, 6, 1)"></td>
+                    <td id="cell-3-7" onclick="sendPostRequest(3, 7, 1)"></td>
+                    <td id="cell-3-8" onclick="sendPostRequest(3, 8, 1)"></td>
+                    <td id="cell-3-9" onclick="sendPostRequest(3, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-4-0" onclick="sendPostRequest(4, 0, 1)"></td>
+                    <td id="cell-4-1" onclick="sendPostRequest(4, 1, 1)"></td>
+                    <td id="cell-4-2" onclick="sendPostRequest(4, 2, 1)"></td>
+                    <td id="cell-4-3" onclick="sendPostRequest(4, 3, 1)"></td>
+                    <td id="cell-4-4" onclick="sendPostRequest(4, 4, 1)"></td>
+                    <td id="cell-4-5" onclick="sendPostRequest(4, 5, 1)"></td>
+                    <td id="cell-4-6" onclick="sendPostRequest(4, 6, 1)"></td>
+                    <td id="cell-4-7" onclick="sendPostRequest(4, 7, 1)"></td>
+                    <td id="cell-4-8" onclick="sendPostRequest(4, 8, 1)"></td>
+                    <td id="cell-4-9" onclick="sendPostRequest(4, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-5-0" onclick="sendPostRequest(5, 0, 1)"></td>
+                    <td id="cell-5-1" onclick="sendPostRequest(5, 1, 1)"></td>
+                    <td id="cell-5-2" onclick="sendPostRequest(5, 2, 1)"></td>
+                    <td id="cell-5-3" onclick="sendPostRequest(5, 3, 1)"></td>
+                    <td id="cell-5-4" onclick="sendPostRequest(5, 4, 1)"></td>
+                    <td id="cell-5-5" onclick="sendPostRequest(5, 5, 1)"></td>
+                    <td id="cell-5-6" onclick="sendPostRequest(5, 6, 1)"></td>
+                    <td id="cell-5-7" onclick="sendPostRequest(5, 7, 1)"></td>
+                    <td id="cell-5-8" onclick="sendPostRequest(5, 8, 1)"></td>
+                    <td id="cell-5-9" onclick="sendPostRequest(5, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-6-0" onclick="sendPostRequest(6, 0, 1)"></td>
+                    <td id="cell-6-1" onclick="sendPostRequest(6, 1, 1)"></td>
+                    <td id="cell-6-2" onclick="sendPostRequest(6, 2, 1)"></td>
+                    <td id="cell-6-3" onclick="sendPostRequest(6, 3, 1)"></td>
+                    <td id="cell-6-4" onclick="sendPostRequest(6, 4, 1)"></td>
+                    <td id="cell-6-5" onclick="sendPostRequest(6, 5, 1)"></td>
+                    <td id="cell-6-6" onclick="sendPostRequest(6, 6, 1)"></td>
+                    <td id="cell-6-7" onclick="sendPostRequest(6, 7, 1)"></td>
+                    <td id="cell-6-8" onclick="sendPostRequest(6, 8, 1)"></td>
+                    <td id="cell-6-9" onclick="sendPostRequest(6, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-7-0" onclick="sendPostRequest(7, 0, 1)"></td>
+                    <td id="cell-7-1" onclick="sendPostRequest(7, 1, 1)"></td>
+                    <td id="cell-7-2" onclick="sendPostRequest(7, 2, 1)"></td>
+                    <td id="cell-7-3" onclick="sendPostRequest(7, 3, 1)"></td>
+                    <td id="cell-7-4" onclick="sendPostRequest(7, 4, 1)"></td>
+                    <td id="cell-7-5" onclick="sendPostRequest(7, 5, 1)"></td>
+                    <td id="cell-7-6" onclick="sendPostRequest(7, 6, 1)"></td>
+                    <td id="cell-7-7" onclick="sendPostRequest(7, 7, 1)"></td>
+                    <td id="cell-7-8" onclick="sendPostRequest(7, 8, 1)"></td>
+                    <td id="cell-7-9" onclick="sendPostRequest(7, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-8-0" onclick="sendPostRequest(8, 0, 1)"></td>
+                    <td id="cell-8-1" onclick="sendPostRequest(8, 1, 1)"></td>
+                    <td id="cell-8-2" onclick="sendPostRequest(8, 2, 1)"></td>
+                    <td id="cell-8-3" onclick="sendPostRequest(8, 3, 1)"></td>
+                    <td id="cell-8-4" onclick="sendPostRequest(8, 4, 1)"></td>
+                    <td id="cell-8-5" onclick="sendPostRequest(8, 5, 1)"></td>
+                    <td id="cell-8-6" onclick="sendPostRequest(8, 6, 1)"></td>
+                    <td id="cell-8-7" onclick="sendPostRequest(8, 7, 1)"></td>
+                    <td id="cell-8-8" onclick="sendPostRequest(8, 8, 1)"></td>
+                    <td id="cell-8-9" onclick="sendPostRequest(8, 9, 1)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-9-0" onclick="sendPostRequest(9, 0, 1)"></td>
+                    <td id="cell-9-1" onclick="sendPostRequest(9, 1, 1)"></td>
+                    <td id="cell-9-2" onclick="sendPostRequest(9, 2, 1)"></td>
+                    <td id="cell-9-3" onclick="sendPostRequest(9, 3, 1)"></td>
+                    <td id="cell-9-4" onclick="sendPostRequest(9, 4, 1)"></td>
+                    <td id="cell-9-5" onclick="sendPostRequest(9, 5, 1)"></td>
+                    <td id="cell-9-6" onclick="sendPostRequest(9, 6, 1)"></td>
+                    <td id="cell-9-7" onclick="sendPostRequest(9, 7, 1)"></td>
+                    <td id="cell-9-8" onclick="sendPostRequest(9, 8, 1)"></td>
+                    <td id="cell-9-9" onclick="sendPostRequest(9, 9, 1)"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: absolute; top: 20%; right: 43%;">
+            <table border="1" cellpadding="20" id="table2">
+                <tr>
+                    <td id="cell-0-0van" onclick="sendPostRequest(0, 0); shoot(this)"></td>
+                    <td id="cell-0-1van" onclick="sendPostRequest(0, 1); shoot(this)"></td>
+                    <td id="cell-0-2van" onclick="sendPostRequest(0, 2); shoot(this)"></td>
+                    <td id="cell-0-3van" onclick="sendPostRequest(0, 3); shoot(this)"></td>
+                    <td id="cell-0-4van" onclick="sendPostRequest(0, 4); shoot(this)"></td>
+                    <td id="cell-0-5van" onclick="sendPostRequest(0, 5); shoot(this)"></td>
+                    <td id="cell-0-6van" onclick="sendPostRequest(0, 6); shoot(this)"></td>
+                    <td id="cell-0-7van" onclick="sendPostRequest(0, 7); shoot(this)"></td>
+                    <td id="cell-0-8van" onclick="sendPostRequest(0, 8); shoot(this)"></td>
+                    <td id="cell-0-9van" onclick="sendPostRequest(0, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-1-0van" onclick="sendPostRequest(1, 0); shoot(this)"></td>
+                    <td id="cell-1-1van" onclick="sendPostRequest(1, 1); shoot(this)"></td>
+                    <td id="cell-1-2van" onclick="sendPostRequest(1, 2); shoot(this)"></td>
+                    <td id="cell-1-3van" onclick="sendPostRequest(1, 3); shoot(this)"></td>
+                    <td id="cell-1-4van" onclick="sendPostRequest(1, 4); shoot(this)"></td>
+                    <td id="cell-1-5van" onclick="sendPostRequest(1, 5); shoot(this)"></td>
+                    <td id="cell-1-6van" onclick="sendPostRequest(1, 6); shoot(this)"></td>
+                    <td id="cell-1-7van" onclick="sendPostRequest(1, 7); shoot(this)"></td>
+                    <td id="cell-1-8van" onclick="sendPostRequest(1, 8); shoot(this)"></td>
+                    <td id="cell-1-9van" onclick="sendPostRequest(1, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-2-0van" onclick="sendPostRequest(2, 0); shoot(this)"></td>
+                    <td id="cell-2-1van" onclick="sendPostRequest(2, 1); shoot(this)"></td>
+                    <td id="cell-2-2van" onclick="sendPostRequest(2, 2); shoot(this)"></td>
+                    <td id="cell-2-3van" onclick="sendPostRequest(2, 3); shoot(this)"></td>
+                    <td id="cell-2-4van" onclick="sendPostRequest(2, 4); shoot(this)"></td>
+                    <td id="cell-2-5van" onclick="sendPostRequest(2, 5); shoot(this)"></td>
+                    <td id="cell-2-6van" onclick="sendPostRequest(2, 6); shoot(this)"></td>
+                    <td id="cell-2-7van" onclick="sendPostRequest(2, 7); shoot(this)"></td>
+                    <td id="cell-2-8van" onclick="sendPostRequest(2, 8); shoot(this)"></td>
+                    <td id="cell-2-9van" onclick="sendPostRequest(2, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-3-0van" onclick="sendPostRequest(3, 0); shoot(this)"></td>
+                    <td id="cell-3-1van" onclick="sendPostRequest(3, 1); shoot(this)"></td>
+                    <td id="cell-3-2van" onclick="sendPostRequest(3, 2); shoot(this)"></td>
+                    <td id="cell-3-3van" onclick="sendPostRequest(3, 3); shoot(this)"></td>
+                    <td id="cell-3-4van" onclick="sendPostRequest(3, 4); shoot(this)"></td>
+                    <td id="cell-3-5van" onclick="sendPostRequest(3, 5); shoot(this)"></td>
+                    <td id="cell-3-6van" onclick="sendPostRequest(3, 6); shoot(this)"></td>
+                    <td id="cell-3-7van" onclick="sendPostRequest(3, 7); shoot(this)"></td>
+                    <td id="cell-3-8van" onclick="sendPostRequest(3, 8); shoot(this)"></td>
+                    <td id="cell-3-9van" onclick="sendPostRequest(3, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-4-0van" onclick="sendPostRequest(4, 0); shoot(this)"></td>
+                    <td id="cell-4-1van" onclick="sendPostRequest(4, 1); shoot(this)"></td>
+                    <td id="cell-4-2van" onclick="sendPostRequest(4, 2); shoot(this)"></td>
+                    <td id="cell-4-3van" onclick="sendPostRequest(4, 3); shoot(this)"></td>
+                    <td id="cell-4-4van" onclick="sendPostRequest(4, 4); shoot(this)"></td>
+                    <td id="cell-4-5van" onclick="sendPostRequest(4, 5); shoot(this)"></td>
+                    <td id="cell-4-6van"  onclick="sendPostRequest(4, 6); shoot(this)"></td>
+                    <td id="cell-4-7van" onclick="sendPostRequest(4, 7); shoot(this)"></td>
+                    <td id="cell-4-8van" onclick="sendPostRequest(4, 8); shoot(this)"></td>
+                    <td id="cell-4-9van" onclick="sendPostRequest(4, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-5-0van" onclick="sendPostRequest(5, 0); shoot(this)"></td>
+                    <td id="cell-5-1van" onclick="sendPostRequest(5, 1); shoot(this)"></td>
+                    <td id="cell-5-2van" onclick="sendPostRequest(5, 2); shoot(this)"></td>
+                    <td id="cell-5-3van" onclick="sendPostRequest(5, 3); shoot(this)"></td>
+                    <td id="cell-5-4van" onclick="sendPostRequest(5, 4); shoot(this)"></td>
+                    <td id="cell-5-5van" onclick="sendPostRequest(5, 5); shoot(this)"></td>
+                    <td id="cell-5-6van" onclick="sendPostRequest(5, 6); shoot(this)"></td>
+                    <td id="cell-5-7van" onclick="sendPostRequest(5, 7); shoot(this)"></td>
+                    <td id="cell-5-8van" onclick="sendPostRequest(5, 8); shoot(this)"></td>
+                    <td id="cell-5-9van" onclick="sendPostRequest(5, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-6-0van" onclick="sendPostRequest(6, 0); shoot(this)"></td>
+                    <td id="cell-6-1van" onclick="sendPostRequest(6, 1); shoot(this)"></td>
+                    <td id="cell-6-2van" onclick="sendPostRequest(6, 2); shoot(this)"></td>
+                    <td id="cell-6-3van" onclick="sendPostRequest(6, 3); shoot(this)"></td>
+                    <td id="cell-6-4van" onclick="sendPostRequest(6, 4); shoot(this)"></td>
+                    <td id="cell-6-5van" onclick="sendPostRequest(6, 5); shoot(this)"></td>
+                    <td id="cell-6-6van" onclick="sendPostRequest(6, 6); shoot(this)"></td>
+                    <td id="cell-6-7van" onclick="sendPostRequest(6, 7); shoot(this)"></td>
+                    <td id="cell-6-8van" onclick="sendPostRequest(6, 8); shoot(this)"></td>
+                    <td id="cell-6-9van" onclick="sendPostRequest(6, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-7-0van" onclick="sendPostRequest(7, 0); shoot(this)"></td>
+                    <td id="cell-7-1van" onclick="sendPostRequest(7, 1); shoot(this)"></td>
+                    <td id="cell-7-2van" onclick="sendPostRequest(7, 2); shoot(this)"></td>
+                    <td id="cell-7-3van" onclick="sendPostRequest(7, 3); shoot(this)"></td>
+                    <td id="cell-7-4van" onclick="sendPostRequest(7, 4); shoot(this)"></td>
+                    <td id="cell-7-5van" onclick="sendPostRequest(7, 5); shoot(this)"></td>
+                    <td id="cell-7-6van" onclick="sendPostRequest(7, 6); shoot(this)"></td>
+                    <td id="cell-7-7van" onclick="sendPostRequest(7, 7); shoot(this)"></td>
+                    <td id="cell-7-8van" onclick="sendPostRequest(7, 8); shoot(this)"></td>
+                    <td id="cell-7-9van" onclick="sendPostRequest(7, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-8-0van" onclick="sendPostRequest(8, 0); shoot(this)"></td>
+                    <td id="cell-8-1van" onclick="sendPostRequest(8, 1); shoot(this)"></td>
+                    <td id="cell-8-2van" onclick="sendPostRequest(8, 2); shoot(this)"></td>
+                    <td id="cell-8-3van" onclick="sendPostRequest(8, 3); shoot(this)"></td>
+                    <td id="cell-8-4van" onclick="sendPostRequest(8, 4); shoot(this)"></td>
+                    <td id="cell-8-5van" onclick="sendPostRequest(8, 5); shoot(this)"></td>
+                    <td id="cell-8-6van" onclick="sendPostRequest(8, 6); shoot(this)"></td>
+                    <td id="cell-8-7van" onclick="sendPostRequest(8, 7); shoot(this)"></td>
+                    <td id="cell-8-8van" onclick="sendPostRequest(8, 8); shoot(this)"></td>
+                    <td id="cell-8-9van" onclick="sendPostRequest(8, 9); shoot(this)"></td>
+                </tr>
+                <tr>
+                    <td id="cell-9-0van" onclick="sendPostRequest(9, 0); shoot(this)"></td>
+                    <td id="cell-9-1van" onclick="sendPostRequest(9, 1); shoot(this)"></td>
+                    <td id="cell-9-2van" onclick="sendPostRequest(9, 2); shoot(this)"></td>
+                    <td id="cell-9-3van" onclick="sendPostRequest(9, 3); shoot(this)"></td>
+                    <td id="cell-9-4van" onclick="sendPostRequest(9, 4); shoot(this)"></td>
+                    <td id="cell-9-5van" onclick="sendPostRequest(9, 5); shoot(this)"></td>
+                    <td id="cell-9-6van" onclick="sendPostRequest(9, 6); shoot(this)"></td>
+                    <td id="cell-9-7van" onclick="sendPostRequest(9, 7); shoot(this)"></td>
+                    <td id="cell-9-8van" onclick="sendPostRequest(9, 8); shoot(this)"></td>
+                    <td id="cell-9-9van" onclick="sendPostRequest(9, 9); shoot(this)"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+
+
+
+<audio id="Fuck You">
+    <source src="{{ url_for('static', filename='fuck-you1.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="I am an artist">
+    <source src="{{ url_for('static', filename='iam-an-artist.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="aaah">
+    <source src="{{ url_for('static', filename='aaaaaaah.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="vsplesk">
+    <source src="{{ url_for('static', filename='vsplesk.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="vsplesk-van">
+    <source src="{{ url_for('static', filename='vsplesk.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-0">
+    <source src="{{ url_for('static', filename='dungeon-master.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-1">
+    <source src="{{ url_for('static', filename='fisting-is-300-.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-2">
+    <source src="{{ url_for('static', filename='i-dont-do-anal.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-3">
+    <source src="{{ url_for('static', filename='swallow-my-cu.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-4">
+    <source src="{{ url_for('static', filename='deep-dark-fantasies.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="vzryv">
+    <source src="{{ url_for('static', filename='vzryv.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-5">
+    <source src="{{ url_for('static', filename='dont-touch.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-6">
+    <source src="{{ url_for('static', filename='that-turns-me-on.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-7">
+    <source src="{{ url_for('static', filename='its-so-fucking-deep.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-8">
+    <source src="{{ url_for('static', filename='do-you-like-what-you-see.mp3') }}" type="audio/mpeg"></source>
+</audio>
+<audio id="rvs-9">
+    <source src="{{ url_for('static', filename='iam-cumming.mp3') }}" type="audio/mpeg"></source>
+</audio>
+
+
+
+<script>
+    function playSoundFuckYou() {
+        document.getElementById("Fuck You").play();
+    }
+</script>
+
+
+
+<script>
+    function sendPostRequest(row, col, tab) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/my-endpoint', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        console.log(xhr.responseText);
+        }
+    };
+    xhr.send('row=' + row + '&col=' + col + '&tab=' + tab);
+    }
+</script>
+
+
+
+<script>
+    var hits = [];
+    var stts = true;
+    var boards = [[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 1], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 1, 0, 0, 1, 0, 1], [0, 1, 0, 0, 1, 0, 0, 0, 0, 0]],
+                  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 1, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [1, 0, 0, 0, 1, 0, 1, 0, 0, 0]],
+                  [[0, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 1, 0, 1], [0, 0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 1, 0, 0, 0], [1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+                  [[0, 0, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 1, 1, 1, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0, 1, 1, 1, 0], [0, 1, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]];
+    var shipbuilds = [[[[1, 8]], [[2, 6], [3, 6], [4, 6], [5, 6]], [[3, 2], [3, 3], [3, 4]], [[4, 8], [4, 9]], [[5, 3], [6, 3]], [[7, 1]], [[9, 1]], [[8, 4], [9, 4]], [[8, 7]], [[6, 9], [7, 9], [8, 9]]],
+                      [[[1, 4], [1, 5]], [[1, 9], [2, 9]], [[2, 1], [3, 1], [4, 1], [5, 1]], [[3, 3], [3, 4], [3, 5]], [[5, 6]], [[6, 3], [7, 3]], [[6, 8]], [[7, 6], [8, 6], [9, 6]], [[9, 0]], [[9, 4]]],
+                      [[[0, 1], [0, 2], [0, 3]], [[1, 7], [2, 7]], [[2, 9]], [[2, 3], [3, 3], [4, 3], [5, 3]], [[3, 5]], [[4, 8]], [[6, 0], [7, 0], [8, 0]], [[7, 3]], [[6, 5], [6, 6]], [[8, 6], [8, 7]]],
+                      [[[0, 2], [0, 3]], [[2, 2], [2, 3], [2, 4], [2, 5]], [[1, 8], [2, 8]], [[4, 0]], [[4, 3]], [[4, 7]], [[6, 1], [7, 1]], [[6, 3], [7, 3], [8, 3]], [[6, 6], [6, 7], [6, 8]], [[8, 6]]]];
+    var boards_van = [[[0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 0, 0, 0], [0, 1, 1, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 1, 0, 1, 1, 1, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 1, 1, 0, 0, 0, 0, 0, 0]]];
+    var shipbuilds_van = [[[[0, 8]], [[1, 1]], [[2, 3]], [[3, 0]], [[4, 4], [4, 5], [4, 6]], [[5, 1], [5, 2]], [[5, 9], [6, 9], [7, 9], [8, 9]], [[7, 1], [7, 2]], [[7, 4], [7, 5], [7, 6]], [[9, 2], [9, 3]]]];
+    var rnboard = Math.floor(Math.random() * boards.length)
+    var arr = boards[rnboard];
+    var build = shipbuilds[rnboard];
+    var rnboardvan = Math.floor(Math.random() * boards_van.length);
+    var arr_van = boards_van[rnboardvan];
+    var build_van = shipbuilds_van[rnboardvan];
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] == 1) {
+                var cell = document.getElementById("cell-" + i + "-" + j);
+                cell.style.backgroundColor = "#ffffff";
+            }
+        }
+    }
+</script>
+
+
+
+<script>
+    function shoot(c){
+        let i = c.parentNode.rowIndex;
+        let j = c.cellIndex;
+        if (arr_van[i][j] === 1 && stts === true){
+            c.style.backgroundColor = "#ff0000";
+            arr_van[i][j] = 3;
+
+            for (let u = 0; u < build_van.length; u++){
+                let count = 0;
+                for (let shi = 0; shi < build_van[u].length; shi++){
+                    if (arr_van[build_van[u][shi][0]][build_van[u][shi][1]] === 3){
+                        count += 1;
+                    }
+                }
+                if (count === build_van[u].length) {
+                    labelDied2(build_van[u]);
+                }
+            }
+
+            document.getElementById("vzryv").play();
+            setTimeout(function() {document.getElementById("aaah").play();}, 500)
+            if (aboutResult() === "player"){
+                let newh2 = document.createElement("h2");
+                let newContent = document.createTextNode("You won!");
+                newh2.appendChild(newContent);
+                document.body.appendChild(newh2);
+                stts = false;
+            }
+        }
+        else if (arr_van[i][j] === 0 && stts === true){
+            stts = false;
+            disableTable(hits);
+            document.getElementById("vsplesk").play();
+            c.style.backgroundColor = "#4283ff";
+            arr_van[i][j] = 2;
+        }
+    }
+</script>
+
+
+
+<script>
+    function disableTable() {
+        var i = null;
+        var j = null;
+        let len = hits.length;
+        if (len > 0){
+            var is = hits[0][0];
+            var js = hits[0][1];
+            var points = [];
+            var count_of_correct_points = 0;
+            try{arr[is - 1][js]; points.push([is - 1, js]);} catch {}
+            try{arr[is + 1][js]; points.push([is + 1, js]);} catch {}
+            try{arr[is][js - 1]; points.push([is, js - 1]);} catch {}
+            try{arr[is][js + 1]; points.push([is, js + 1]);} catch {}
+            for (let el = 0; el < points.length; el++){
+                if (arr[points[el][0]][points[el][1]] < 2) {i = points[el][0]; j = points[el][1]; break;}
+            }
+            for (let el = 0; el < points.length; el++){
+                if (arr[points[el][0]][points[el][1]] < 2) {count_of_correct_points += 1;}
+            }
+            if (count_of_correct_points === 0){
+                hits.splice(0, 1);
+            }
+            points = [];
+        }
+        if (i === null || j === null){
+            do{
+                i = Math.floor(Math.random() * 10);
+                j = Math.floor(Math.random() * 10);
+            } while(arr[i][j] === 2 || arr[i][j] === 3);
+        }
+        console.log("hits", hits);
+        if (arr[i][j] === 0) {
+            randomVanSound();
+            setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#4283ff";
+            document.getElementById("vsplesk-van").play();
+            arr[i][j] = 2;
+            stts = true;}, 2000);
+        }
+        if (arr[i][j] === 1) {
+            randomVanSound();
+            setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#ff0000";
+            document.getElementById("vzryv").play();
+            arr[i][j] = 3;
+            try{arr[i - 1][j - 1] = 2}catch{}
+            try{arr[i - 1][j + 1] = 2}catch{}
+            try{arr[i + 1][j - 1] = 2}catch{}
+            try{arr[i + 1][j + 1] = 2}catch{}
+            hits.unshift([i, j])
+            for (let u = 0; u < build.length; u++){
+                let count = 0;
+                for (let shi = 0; shi < build[u].length; shi++){
+                    if (arr[build[u][shi][0]][build[u][shi][1]] === 3){
+                        count += 1;
+                    }
+                }
+                if (count === build[u].length) {
+                    labelDied1(build[u]);
+                }
+            };
+            if (aboutResult() === "van"){
+                let newh2 = document.createElement("h2");
+                let newContent = document.createTextNode("You lost!");
+                newh2.appendChild(newContent);
+                document.body.appendChild(newh2);
+                stts = false;
+            }
+            else{setTimeout(function(){disableTable();}, 1500)}}, 2000);
+        }
+    }
+</script>
+
+
+
+<script>
+    function randomVanSound(){
+        let rn = Math.floor(Math.random() * 10);
+        document.getElementById("rvs-" + rn).play();
+    }
+</script>
+
+
+
+<script>
+    function labelDied1(ship){
+        for (let r = 0; r < ship.length; r++){
+            let square = ship[r];
+            try{if (arr[square[0] - 1][square[1] - 1] === 0 || arr[square[0] - 1][square[1] - 1] === 2) {arr[square[0] - 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] - 1][square[1]] === 0 || arr[square[0] - 1][square[1]] === 2) {arr[square[0] - 1][square[1]] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] - 1][square[1] + 1] === 0 || arr[square[0] - 1][square[1] + 1] === 2) {arr[square[0] - 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0]][square[1] - 1] === 0 || arr[square[0]][square[1] - 1] === 2) {arr[square[0]][square[1] - 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0]][square[1] + 1] === 0 || arr[square[0]][square[1] + 1] === 2) {arr[square[0]][square[1] + 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1] - 1] === 0 || arr[square[0] + 1][square[1] - 1] === 2) {arr[square[0] + 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1]] === 0 || arr[square[0] + 1][square[1]] === 2) {arr[square[0] + 1][square[1]] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1] + 1] === 0 || arr[square[0] + 1][square[1] + 1] === 2) {arr[square[0] + 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+        }
+    }
+    function labelDied2(ship){
+        for (let r = 0; r < ship.length; r++){
+            let square = ship[r];
+            try{if (arr_van[square[0] - 1][square[1] - 1] === 0) {arr_van[square[0] - 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] - 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0] - 1][square[1]] === 0) {arr_van[square[0] - 1][square[1]] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + square[1] + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0] - 1][square[1] + 1] === 0) {arr_van[square[0] - 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] + 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0]][square[1] - 1] === 0) {arr_van[square[0]][square[1] - 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] - 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0]][square[1] + 1] === 0) {arr_van[square[0]][square[1] + 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] + 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0] + 1][square[1] - 1] === 0) {arr_van[square[0] + 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] - 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0] + 1][square[1]] === 0) {arr_van[square[0] + 1][square[1]] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + square[1] + "van").style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr_van[square[0] + 1][square[1] + 1] === 0) {arr_van[square[0] + 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] + 1) + "van").style.backgroundColor = "#4283ff"}} catch {}
+        }
+    }
+</script>
+
+
+<script>
+    function aboutResult(){
+        let count_of_3 = 0;
+        for (let xxx = 0; xxx < 10; xxx++){
+            for (let yyy = 0; yyy < 10; yyy++){
+                if (arr[xxx][yyy] === 3){count_of_3 += 1;}
+            }
+        }
+        let count_of_3_van = 0;
+        for (let xxx = 0; xxx < 10; xxx++){
+            for (let yyy = 0; yyy < 10; yyy++){
+                if (arr_van[xxx][yyy] === 3){count_of_3_van += 1;}
+            }
+        }
+        console.log(count_of_3, count_of_3_van);
+        if (count_of_3 === 20){return "van";}
+        else if (count_of_3_van === 20){return "player";}
+        else {return null;}
+    }
+</script>
