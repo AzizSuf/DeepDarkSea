@@ -483,8 +483,6 @@
             if (count_of_correct_points === 0){
                 hits.splice(0, 1);
             }
-            console.log(points);
-            console.log(hits);
             points = [];
         }
         if (i === null || j === null){
@@ -506,6 +504,10 @@
             setTimeout(function() {document.getElementById("cell-" + i + "-" + j).style.backgroundColor = "#ff0000";
             document.getElementById("vzryv").play();
             arr[i][j] = 3;
+            try{arr[i - 1][j - 1] = 2}catch{}
+            try{arr[i - 1][j + 1] = 2}catch{}
+            try{arr[i + 1][j - 1] = 2}catch{}
+            try{arr[i + 1][j + 1] = 2}catch{}
             hits.unshift([i, j])
             for (let u = 0; u < build.length; u++){
                 let count = 0;
@@ -545,14 +547,14 @@
     function labelDied1(ship){
         for (let r = 0; r < ship.length; r++){
             let square = ship[r];
-            try{if (arr[square[0] - 1][square[1] - 1] === 0) {arr[square[0] - 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0] - 1][square[1]] === 0) {arr[square[0] - 1][square[1]] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0] - 1][square[1] + 1] === 0) {arr[square[0] - 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0]][square[1] - 1] === 0) {arr[square[0]][square[1] - 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0]][square[1] + 1] === 0) {arr[square[0]][square[1] + 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0] + 1][square[1] - 1] === 0) {arr[square[0] + 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0] + 1][square[1]] === 0) {arr[square[0] + 1][square[1]] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
-            try{if (arr[square[0] + 1][square[1] + 1] === 0) {arr[square[0] + 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] - 1][square[1] - 1] === 0 || arr[square[0] - 1][square[1] - 1] === 2) {arr[square[0] - 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] - 1][square[1]] === 0 || arr[square[0] - 1][square[1]] === 2) {arr[square[0] - 1][square[1]] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] - 1][square[1] + 1] === 0 || arr[square[0] - 1][square[1] + 1] === 2) {arr[square[0] - 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] - 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0]][square[1] - 1] === 0 || arr[square[0]][square[1] - 1] === 2) {arr[square[0]][square[1] - 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0]][square[1] + 1] === 0 || arr[square[0]][square[1] + 1] === 2) {arr[square[0]][square[1] + 1] = 2; document.getElementById("cell-" + square[0] + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1] - 1] === 0 || arr[square[0] + 1][square[1] - 1] === 2) {arr[square[0] + 1][square[1] - 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] - 1)).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1]] === 0 || arr[square[0] + 1][square[1]] === 2) {arr[square[0] + 1][square[1]] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + square[1]).style.backgroundColor = "#4283ff"}} catch {}
+            try{if (arr[square[0] + 1][square[1] + 1] === 0 || arr[square[0] + 1][square[1] + 1] === 2) {arr[square[0] + 1][square[1] + 1] = 2; document.getElementById("cell-" + (square[0] + 1) + "-" + (square[1] + 1)).style.backgroundColor = "#4283ff"}} catch {}
         }
     }
     function labelDied2(ship){
