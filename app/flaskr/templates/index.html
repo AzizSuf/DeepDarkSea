@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep Dark Sea</title>
+	<style>
+		body {
+			background: radial-gradient(circle, #000000, #191966);
+			font-family: Arial, sans-serif;
+			color: #fff7f7;
+		}
+
+		h1 {
+			font-size: 48px;
+			font-weight: bold;
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		button {
+			background-color: #0000ff;
+			color: #fff;
+			border-radius: 50px;
+			border: none;
+			padding: 10px 80px;
+			font-size: 15px;
+			font-weight: bold;
+			margin-top: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		img {
+            border: 2px solid #0000ff;
+        }
+	</style>
+</head>
+<body>
+
+	<h1>Deep Dark Sea</h1>
+	<button onclick="location.href='{{ url_for('find_player') }}'" type="button" style="position:absolute; top:25%; left:25%; width:50%; height:5%">Find player</button>
+	<button onclick="location.href='{{ url_for('choose_the_door') }}'" type="button" style="position:absolute; top:31%; left:25%; width:50%; height:5%">Choose the door</button>
+	<button onclick="location.href='{{ url_for('login') }}'" type="button" style="position:absolute; top:37%; left:25%; width:50%; height:5%">Login</button>
+	<button onclick="location.href='{{ url_for('signup') }}'" type="button" style="position:absolute; top:43%; left:25%; width:50%; height:5%">Sign up</button>
+	<img src="{{ url_for('static', filename='Kazuya_left.jpg') }}" style="position:absolute; top:0px; left:0px; width:20%; height:100%;">
+	<img src="{{ url_for('static', filename='Kazuya_right.jpg') }}" style="position:absolute; top:0px; right:0px; width:20%; height:100%;">
+
+</body>
+</html>
